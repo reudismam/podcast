@@ -1,7 +1,7 @@
 import style from './styles.module.scss';
 import Icon from '@material-ui/core/Icon';
 
-export const Player = () => {
+const Player = () => {
     return (
         <div className={style.playerContainer}>
             <header>
@@ -13,10 +13,12 @@ export const Player = () => {
                 <strong>Selecione um podcast para ouvir</strong>
             </div>
 
-            <footer>
+            <footer className={style.empty}>
                 <div className={style.progress}>
                     <span>00:00</span>
-                    <div className={style.emptySlider}></div>
+                    <div className={style.slider}>
+                        <div className={style.emptySlider}></div>
+                    </div>
                     <span>00:00</span>
                 </div>
 
@@ -25,13 +27,13 @@ export const Player = () => {
                     <Icon>shuffle</Icon>
                     </button>
                     <button type="button">
-                    <Icon>previous</Icon>
+                    <Icon>skip_previous</Icon>
+                    </button>
+                    <button type="button" className={style.playButton}>
+                    <Icon>play_circle</Icon>
                     </button>
                     <button type="button">
-                    <Icon>play</Icon>
-                    </button>
-                    <button type="button">
-                    <Icon>next</Icon>
+                    <Icon>skip_next</Icon>
                     </button>
                     <button type="button">
                     <Icon>repeat</Icon>
@@ -41,3 +43,5 @@ export const Player = () => {
         </div>
     );
 }
+
+export default Player;

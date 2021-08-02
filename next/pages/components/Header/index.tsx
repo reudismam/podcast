@@ -2,7 +2,7 @@ import style from './styles.module.scss';
 import format from 'date-fns/format';
 import ptBR from 'date-fns/locale/pt-BR';
 
-export const Header = () => {
+const Header = () => {
     const currentDate = format(new Date(), 'EEEEEE, d MMM', {
         locale:ptBR
     });
@@ -16,3 +16,5 @@ export const Header = () => {
         </header>
     );
 }
+
+export default Header;
